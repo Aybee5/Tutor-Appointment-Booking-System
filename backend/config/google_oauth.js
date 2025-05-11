@@ -3,6 +3,13 @@ const passport = require("passport");
 const { userModel } = require("../model/user.model");
 const { v4: uuidv4 } = require("uuid");
 require("dotenv").config();
+
+console.log(process.env.GOOGLE_CLIENT_ID);
+console.log(process.env.GOOGLE_CLIENT_SECRET);
+console.log(process.env.secret);
+console.log(process.env.port);
+
+
 passport.use(
   new GoogleStrategy(
     {

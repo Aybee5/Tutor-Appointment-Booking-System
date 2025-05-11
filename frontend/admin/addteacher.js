@@ -1,38 +1,45 @@
-let btn = document.getElementById("btn1")
+let btn = document.getElementById("btn1");
 
-btn.addEventListener("click",(event)=>{
-    event.preventDefault()
-    console.log("jyoti")
-    let all_input = document.querySelectorAll(".add-form input")
-   
-    let obj={}
-    for(let i=0;i<=all_input.length-1;i++){
-     
-      obj[all_input[i].id]=all_input[i].value
-    }
+btn.addEventListener("click", async (event) => {
+    event.preventDefault();
 
-    addDoctor(obj)
-})
+    const formData = {
+        teacherName: document.getElementById("teacherName").value,
+        email: document.getElementById("email").value,
+        qualifications: document.getElementById("qualifications").value,
+        experience: document.getElementById("experience").value,
+        phoneNo: document.getElementById("phoneNo").value,
+        city: document.getElementById("city").value,
+        subject: document.getElementById("subject").value,
+        image: document.getElementById("image").value,
+        about: document.getElementById("about").value,
+        slots: []
+    };
 
-async function addDoctor(obj){
     try {
-        console.log(obj)
-       let adding_rqst=await fetch("https://alert-lime-bracelet.cyclic.app/teacher/add",{
-        method:"POST",
-        headers:{
-            "Content-Type":"application/json"
-        },
-        body:JSON.stringify(obj)
-       })
-       if(adding_rqst.ok){
-        Swal.fire("Teacher Added Successfully")
-       
+        const response = await fetch("http://localhost:4500/teacher/addteacher", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: localStorage.getItem("token")
+            },
+            body: JSON.stringify(formData)
+        });
+
+        const data = await response.json();
         
-    }
-
+        if (response.ok) {
+            Swal.fire("Teacher Added Successfully");
+            // Clear form
+            document.querySelector(".add-form").reset();
+        } else {
+            throw new Error(data.msg || "Failed to add teacher");
+        }
     } catch (error) {
-        alert ("BAD REQUEST")
+        Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: error.message
+        });
     }
-
-   
-}
+});

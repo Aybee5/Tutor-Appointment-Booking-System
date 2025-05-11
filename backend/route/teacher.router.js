@@ -7,6 +7,12 @@ teacherRouter.get("/", async (req, res) => {
 });
 teacherRouter.get("/allteacher", async (req, res) => {
   const Teachers = await TeacherModel.find();
+  console.log(Teachers);
+  if (Teachers.length == 0) {
+    res.status(404).send({ msg: "No teacher found" });
+    return;
+  }
+
   res.send(Teachers);
 });
 
@@ -24,6 +30,8 @@ teacherRouter.post("/addteacher", async (req, res) => {
     slots,
   } = req.body;
   try {
+    console.log("creating teacher", req.body);
+
     let teacher = new TeacherModel({
       teacherName,
       email,
@@ -39,6 +47,8 @@ teacherRouter.post("/addteacher", async (req, res) => {
     await teacher.save();
     res.status(201).send({ msg: "teacher has been created", teacher });
   } catch (error) {
+    console.log(error);
+
     res.status(500).send({ msg: "Error in created teacher" });
   }
 });

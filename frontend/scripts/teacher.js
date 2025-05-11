@@ -1,8 +1,9 @@
-let baseurl = "https://alert-lime-bracelet.cyclic.app/teacher/allteacher";
+let baseurl = "http://localhost:4500/teacher/allteacher";
 
 let bag = [];
 
 fetch(baseurl, {
+  // @ts-ignore
   headers: {
     Authorization: localStorage.getItem("token"),
   },
