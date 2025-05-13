@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 });
 
 app.use(userRoute);
-app.use(authenticate);
+// app.use(authenticate);
 app.use("/teacher", teacherRouter);
 app.use(slotRoute);
 
