@@ -2,7 +2,7 @@ const express = require("express");
 var cors = require("cors");
 require("dotenv").config();
 
-const port = process.env.port;
+const port = process.env.PORT || 3000;
 const { connection } = require("./config/config");
 const { userRoute } = require("./route/user.route");
 const { authenticate } = require("./middleware/authenticate.middleware");
