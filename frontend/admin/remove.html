@@ -75,7 +75,7 @@
 
             async function getid(name) {
                 try {
-           let res = await fetch("http://localhost:4500/teacher/getteacherID", {
+           let res = await fetch("https://tutor-appointment-booking-system.onrender.com/teacher/getteacherID", {
               method: "GET",
               headers: {
               "Content-Type": "application/json",
@@ -99,7 +99,7 @@
                }
 
             function dellete(id){
-                fetch(`http://localhost:4500/teacher/delete/?${id}`,{
+                fetch(`https://tutor-appointment-booking-system.onrender.com/teacher/delete/?${id}`,{
                     method:"DELETE",
                     
                 })

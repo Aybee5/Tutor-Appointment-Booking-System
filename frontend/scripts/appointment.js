@@ -22,7 +22,7 @@ async function bookSlot(date, time) {
   let studentID = localStorage.getItem("studentID");
   let obj = { teacherEmailID, studentID, date, time };
 
-  let addSlot = await fetch("http://localhost:4500/bookSlots", {
+  let addSlot = await fetch("https://tutor-appointment-booking-system.onrender.com/bookSlots", {
     method: "POST",
     headers: {
       "Content-type": "application/json",

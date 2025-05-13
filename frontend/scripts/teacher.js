@@ -1,4 +1,4 @@
-let baseurl = "http://localhost:4500/teacher/allteacher";
+let baseurl = "https://tutor-appointment-booking-system.onrender.com/teacher/allteacher";
 
 let bag = [];
 

@@ -19,7 +19,7 @@ async function resetPassword(newPass) {
       password: newPass,
     };
 
-    await fetch("http://localhost:4500/reset", {
+    await fetch("https://tutor-appointment-booking-system.onrender.com/reset", {
       method: "PATCH",
       headers: {
         "Content-type": "application/json",

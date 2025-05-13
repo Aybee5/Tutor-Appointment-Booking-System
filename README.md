@@ -86,12 +86,12 @@ Start the server:
 npm start server
 ```
 
-Open your web browser and go to http://localhost:4500
+Open your web browser and go to https://tutor-appointment-booking-system.onrender.com
 
 ### Usage
 To use the Veterinary Appointment Booking System, follow these steps:
 
-1. Open your web browser and go to http://localhost:4500
+1. Open your web browser and go to https://tutor-appointment-booking-system.onrender.com
 2. Navigate to the sign-up page and create an account.
 3. Log in to the system.
 4. Navigate to the tutors and book an appointment.

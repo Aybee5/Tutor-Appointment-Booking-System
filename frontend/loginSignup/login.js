@@ -7,7 +7,7 @@ form.addEventListener("submit", (e) => {
   login(payload);
 });
 async function login(payload) {
-  const fetchedData = await fetch("http://localhost:4500/user/login", {
+  const fetchedData = await fetch("https://tutor-appointment-booking-system.onrender.com/user/login", {
     method: "POST",
     headers: {
       "Content-type": "application/json",

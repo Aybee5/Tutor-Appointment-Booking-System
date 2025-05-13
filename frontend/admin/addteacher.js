@@ -17,7 +17,7 @@ btn.addEventListener("click", async (event) => {
     };
 
     try {
-        const response = await fetch("http://localhost:4500/teacher/addteacher", {
+        const response = await fetch("https://tutor-appointment-booking-system.onrender.com/teacher/addteacher", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

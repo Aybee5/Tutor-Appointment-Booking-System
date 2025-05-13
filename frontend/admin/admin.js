@@ -42,7 +42,7 @@ async function getData() {
   
  
       try {
-        let res = await fetch("http://localhost:4500/teacher/allteacher", {
+        let res = await fetch("https://tutor-appointment-booking-system.onrender.com/teacher/allteacher", {
               method: "GET",
               headers: {
                   "Content-Type": "application/json",
